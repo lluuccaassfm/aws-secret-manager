@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: aws-secret-manager
+  config:
+    import: aws-secretsmanager:database-teste?prefix=db.
+  cloud:
+    aws:
+      credentials:
+        access-key: dummy
+        secret-key: dummy
+      region:
+        static: sa-east-1
+      endpoint: http://localhost:4566

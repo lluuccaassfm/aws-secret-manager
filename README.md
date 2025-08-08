@@ -32,10 +32,11 @@ A secret criada na AWS Secret Manager foi "database-teste" com o valor em format
 ```
 
 Para recuperar a secret e seus respectivos valores foi adicionado a configuração no 'application.yaml':
-`spring.config.import: aws-secretsmanager:database-teste?prefix=db.`
+`spring.config.import: optional:aws-secretsmanager:${SECRET_NAME}?prefix=${SECRET_PREFIX}.`
 
-**"database-teste"** -> Nome da secret definina na AWS  
-**"?prefix=db."** -> Adiciona um prefixo às chaves de propriedades
+Definir variáveis de ambiente:  
+**"SECRET_NAME"** -> Nome da secret definina na AWS  
+**"SECRET_PREFIX"** -> Adiciona um prefixo às chaves de propriedades
 
 
 Para recuperar os valores dessa secret, basta seguir o exemplo da classe AwsSecretManagerApplication.java, utilizando a notação @Value e o prefixo 

@@ -2,8 +2,8 @@ spring:
   application:
     name: aws-secret-manager
   config:
-    import: optional:aws-secretsmanager:${SECRET_NAME}?prefix=${SECRET_PREFIX}.
-    secret-prefix: ${SECRET_PREFIX}
+    import: optional:aws-secretsmanager:test-secret?prefix=test.
+    secret-prefix: test
   cloud:
     aws:
       credentials:
